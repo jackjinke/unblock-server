@@ -1,7 +1,6 @@
 # Unblock-server
 
 A reverse proxy server for unblocking some Chinese regional limited services.
-Currently only supports netease music.
 Also supports DNS and PAC for mobile devices.
 
 ## Installation

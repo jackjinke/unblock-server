@@ -2,6 +2,7 @@ FROM nginx:alpine
 # Setup proxy server
 COPY proxy.conf /etc/nginx/conf.d/proxy.conf
 COPY ipquery.txt /etc/nginx/html/163/ipquery.txt
+COPY info.js /usr/share/nginx/html/info.js
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 
 # If you want to add a homepage for your server:

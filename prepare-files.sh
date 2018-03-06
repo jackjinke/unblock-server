@@ -7,16 +7,17 @@ address=/music.163.com/${publicIP}
 address=/ip.ws.126.net/${publicIP}
 address=/music.httpdns.c.163.com/${publicIP}
 address=/m10.music.126.net/125.39.1.27
+address=/nstool.netease.com/${publicIP}
 " >> /etc/dnsmasq.conf
 
 echo "function FindProxyForURL(url, host) {
-	if (host == 'music.163.com' || host == 'ip.ws.126.net') {
+	if (host == 'music.163.com' || host == 'ip.ws.126.net' || host == 'nstool.netease.com') {
 		return 'PROXY ${publicIP}';
 	} else if (host == 'music.httpdns.c.163.com') {
 		return 'PROXY 127.0.0.1:9999';
 	} else if (host == 'm10.music.126.net') {
 		return 'PROXY 125.39.1.27:80';
-	}
+	}	
 	return 'DIRECT';
 }" >> /usr/share/nginx/html/proxy.pac
 
