@@ -10,4 +10,4 @@ docker run -d -p 80:80 -p 53:53/tcp -p 53:53/udp --restart=always --cap-add=NET_
 ```
 
 ## Credit
-Thanks [@JixunMoe](https://github.com/JixunMoe) for his [blog](https://jixun.moe/2017/01/01/ymusic-hosts-fix/) about unblocking Netease music!
+Thanks [@JixunMoe](https://github.com/JixunMoe) for his [blog](https://jixun.moe/2017/01/01/ymusic-hosts-fix/)!
