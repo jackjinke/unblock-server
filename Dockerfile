@@ -14,6 +14,7 @@ RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 RUN apk --no-cache add bind-tools dnsmasq
 EXPOSE 53 53/udp
 COPY prepare-files.sh /etc/prepare-files.sh
+COPY prepare-files-ipv6.sh /etc/prepare-files-ipv6.sh
 RUN /bin/sh -c 'sh /etc/prepare-files.sh'
 RUN /bin/sh -c 'sh /etc/prepare-files-ipv6.sh'
 
