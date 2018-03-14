@@ -1,25 +1,22 @@
 publicIP=$(dig +short myip.opendns.com @resolver1.opendns.com)
+publicIP6=$(dig +short -6 myip.opendns.com aaaa @resolver1.ipv6-sandbox.opendns.com)
 
 echo "no-resolv
 server=8.8.8.8
 server=208.67.222.222
+server=2001:4860:4860::8888
+server=2620:0:ccc::2
 address=/music.163.com/${publicIP}
+address=/music.163.com/${publicIP6}
 address=/ip.ws.126.net/${publicIP}
+address=/ip.ws.126.net/${publicIP6}
 address=/music.httpdns.c.163.com/${publicIP}
-address=/m10.music.126.net/125.39.1.27
+address=/music.httpdns.c.163.com/${publicIP6}
+address=/m10.music.126.net/157.185.161.30
+address=/m10.music.126.net/157.185.161.30
 address=/nstool.netease.com/${publicIP}
+address=/nstool.netease.com/${publicIP6}
 " >> /etc/dnsmasq.conf
-
-echo "function FindProxyForURL(url, host) {
-	if (host == 'music.163.com' || host == 'ip.ws.126.net' || host == 'nstool.netease.com') {
-		return 'PROXY ${publicIP}';
-	} else if (host == 'music.httpdns.c.163.com') {
-		return 'PROXY 127.0.0.1:9999';
-	} else if (host == 'm10.music.126.net') {
-		return 'PROXY 125.39.1.27:80';
-	}	
-	return 'DIRECT';
-}" >> /usr/share/nginx/html/proxy.pac
 
 echo "server {
   listen       80;
