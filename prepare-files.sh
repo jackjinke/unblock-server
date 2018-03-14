@@ -6,7 +6,11 @@ server=208.67.222.222
 address=/music.163.com/${publicIP}
 address=/ip.ws.126.net/${publicIP}
 address=/music.httpdns.c.163.com/${publicIP}
-address=/m10.music.126.net/157.185.161.30
+address=/m7.music.126.net/115.127.231.194
+address=/m8.music.126.net/114.236.140.97
+address=/m9.music.126.net/115.127.231.97
+address=/m10.music.126.net/114.236.140.96
+
 address=/nstool.netease.com/${publicIP}
 " >> /etc/dnsmasq.conf
 
